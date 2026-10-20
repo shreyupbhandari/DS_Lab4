@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 class StackTest
 {
 
-	MyStack<String> stack;
+	MyStack<Integer> stack;
 	
 	@BeforeEach
 	void setUp() throws Exception
@@ -22,13 +22,13 @@ class StackTest
 				()->{
 					stack.pop();
 					});
-		stack.push("10");
-		assertEquals("10",stack.pop());
+		stack.push(10);
+		assertEquals(10,stack.pop());
 		assertTrue(stack.isEmpty());
-		stack.push("10");
-		stack.push("20");
-		assertEquals("20",stack.pop());
-		assertEquals("10",stack.pop());
+		stack.push(10);
+		stack.push(20);
+		assertEquals(20,stack.pop());
+		assertEquals(10,stack.pop());
 		assertTrue(stack.isEmpty());
 		
 		
@@ -38,15 +38,15 @@ class StackTest
 	void isEmptyTest()
 	{
 		assertTrue(stack.isEmpty());
-		stack.push("10");
+		stack.push(10);
 		assertTrue(!(stack.isEmpty()));
 	}
 	
 	@Test 
 	void top()
 	{
-		stack.push("30");
-		assertEquals("30",stack.top());
+		stack.push(30);
+		assertEquals(30,stack.top());
 		assertTrue(!(stack.isEmpty()));
 	}
 	
